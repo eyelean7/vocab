@@ -1,12 +1,18 @@
 <div class="row">
   <div class="col-md-12">
-    <h1>Vocabulary Guessing Game</h1>
+    <h1>Your Words:</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
-    <h3>What would you like to do?</h3>
+    <ul>
+      <% @words.each() do |word| %>
+        <% if word.headword.length()>0 %>
+          <li><a href="/word/<%= word.id() %>"> <%= word.headword()%></a></li>
+        <% end %>
+      <% end %>
+    </ul>
     <a href="/list"><button type="button" class="btn btn-primary" name="button">Check out all words</button></a>
     <a href="/new_entry"><button type="button" class="btn btn-danger" name="button">Add another word</button></a>
   </div>

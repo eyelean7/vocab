@@ -1,9 +1,9 @@
 require('rspec')
 require('words')
 
-describe(Entry) do
+describe(Word) do
   test_definition = Definition.new({:definition => "to throw out of a window"})
-  test_entry = Entry.new({:headword => "defenestrate"})
+  test_entry = Word.new({:headword => "defenestrate"})
   test_entry.add_definition(test_definition)
   describe('attr_reader') do
     it('returns attributes when called') do
@@ -14,13 +14,13 @@ describe(Entry) do
   end
   describe('.all') do
     it('starts empty') do
-      expect(Entry.all()).to(eq([]))
+      expect(Word.all()).to(eq([]))
     end
   end
   describe('.find') do
     it('returns an object with a given id') do
       test_entry.save()
-      expect(Entry.find(test_entry.id())).to(eq(test_entry))
+      expect(Word.find(test_entry.id())).to(eq(test_entry))
     end
   end
   describe('#add_definition') do

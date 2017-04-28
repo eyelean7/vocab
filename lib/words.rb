@@ -1,4 +1,4 @@
-class Entry
+class Word
   @@all_entries = []
   attr_reader(:headword, :definitions, :id)
   define_method(:initialize) do |attributes|
