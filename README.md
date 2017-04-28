@@ -15,7 +15,7 @@ _The Vocab app allows the user to enter a word and its definition. The user may 
 * _While in terminal, navigate to the vocab folder and run 'bundle install'_
 * _While still in the project folder, run 'ruby app.rb'_
 * _Open Google Chrome and type in 'http://localhost:4567/' in the address bar_
-* _OR open in [heroku]()_
+* _OR open in [heroku](https://sleepy-inlet-99828.herokuapp.com/)_
 
 
 ## Support and contact details
