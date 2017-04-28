@@ -14,6 +14,7 @@ describe(Word) do
   end
   describe('.all') do
     it('starts empty') do
+      Word.clear()
       expect(Word.all()).to(eq([]))
     end
   end

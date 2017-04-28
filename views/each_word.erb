@@ -1,6 +1,13 @@
 <h1><%= @word.headword()%></h1>
-<ul>
-  <% @word.definitions().each() do |definition| %>
-  <li><%= definition %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <ul>
+      <% @word.definitions().each() do |definition| %>
+      <li><%= definition %></li>
+      <% end %>
+    </ul>
+
+  </div>
+  <div class="col-md-4"></div>
+</div>

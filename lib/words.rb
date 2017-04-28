@@ -24,6 +24,9 @@ class Word
     end
     found_word
   end
+  define_singleton_method(:clear) do
+    @@all_entries = []
+  end
 end
 
 class Definition
