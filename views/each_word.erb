@@ -7,7 +7,13 @@
       <li><%= definition %></li>
       <% end %>
     </ul>
-
+    <a href="/list"><button type="button" class="btn btn-primary" name="button">Back to word list</button></a>
+    <button type="button" class="btn btn-success reveal" name="button">Add definition</button>
+    <form id="new_def" action="/word/<%= @word.id()%>" method="post">
+      <label for="definition">New Definition</label>
+      <input type="text" name="definition" value="">
+      <button type="submit" class="btn btn-danger" name="button">Submit</button>
+    </form>
   </div>
   <div class="col-md-4"></div>
 </div>
