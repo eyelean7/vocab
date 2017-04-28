@@ -40,3 +40,8 @@ post('/word/:id') do
   @word.add_definition(definition)
   erb(:each_word)
 end
+
+get('/all_definitions') do
+  @words = Word.all()
+  erb(:all_definitions)
+end

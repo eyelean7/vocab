@@ -1,0 +1,26 @@
+<h1>All Definitions</h1>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <ul>
+      <% @words.each() do |word| %>
+        <% if word.headword.length()>0 %>
+        <div class="panel panel-body">
+          <li>
+            <%= word.headword()%>
+            <ul>
+              <% word.definitions().each() do |definition| %>
+              <li><%= definition %></li>
+              <% end %>
+            </ul>
+          </li>
+        </div>
+
+        <% end %>
+      <% end %>
+    </ul>
+    <a href="/list"><button class="btn btn-danger" type="button" name="button">See words</button></a>
+    <a href="/"><button type="button" class="btn btn-primary" name="button">Home</button></a>
+  </div>
+  <div class="col-md-4"></div>
+</div>
