@@ -2,7 +2,7 @@ require('rspec')
 require('words')
 
 describe(Entry) do
-  test_definition = "to throw out of a window"
+  test_definition = Definition.new({:definition => "to throw out of a window"})
   test_entry = Entry.new({:headword => "defenestrate"})
   test_entry.add_definition(test_definition)
   describe('attr_reader') do
@@ -23,10 +23,11 @@ describe(Entry) do
       expect(Entry.find(test_entry.id())).to(eq(test_entry))
     end
   end
-  # describe('#save') do
-  #   it('retains entry') do
-  #     test_entry.save()
-  #     expect(Entry.all()).to(eq(["defenestrate", ["to throw out of a window"]]))
-  #   end
-  # end
+  describe('#add_definition') do
+    it('allows multiple definitions') do
+      test_definition2 = Definition.new({:definition => "to give away money"})
+      test_entry.add_definition(test_definition2)
+      expect(test_entry.definitions()).to(eq(["to throw out of a window", "to give away money"]))
+    end
+  end
 end

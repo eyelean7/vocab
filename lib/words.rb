@@ -7,7 +7,7 @@ class Entry
     @id = @@all_entries.length() + 1
   end
   define_method(:add_definition) do |definition|
-    @definitions.push(definition)
+    @definitions.push(definition.definition())
   end
   define_method(:save) do
     @@all_entries.push(self)
@@ -26,7 +26,7 @@ class Entry
   end
 end
 
-class Definitions
+class Definition
   attr_reader(:definition)
   define_method(:initialize) do |attributes|
     @definition = attributes[:definition]
