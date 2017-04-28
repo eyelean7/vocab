@@ -1,20 +1,21 @@
-<div class="row">
-  <div class="col-md-12">
-    <h1>Your Words:</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-    <ul>
-      <% @words.each() do |word| %>
-        <% if word.headword.length()>0 %>
-          <li><a href="/word/<%= word.id() %>"> <%= word.headword()%></a></li>
+<h1>Your Words:</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <ul>
+        <% @words.each() do |word| %>
+          <% if word.headword.length()>0 %>
+            <li><a href="/word/<%= word.id() %>"> <%= word.headword()%></a></li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
-    <a href="/"><button type="button" class="btn btn-primary" name="button">Back to home page</button></a>
-    <a href="/new_entry"><button type="button" class="btn btn-danger" name="button">Add another word</button></a>
+      </ul>
+
+    </div>
+    <div class="col-sm-4">
+      <a href="/"><button type="button" class="btn btn-primary" name="button">Back to home page</button></a><br>
+      <a href="/new_entry"><button type="button" class="btn btn-danger" name="button">Add another word</button></a>
+    </div>
   </div>
-  <div class="col-md-4"></div>
+
 </div>

@@ -1,19 +1,24 @@
 <h1><%= @word.headword()%></h1>
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-    <ul>
-      <% @word.definitions().each() do |definition| %>
-      <li><%= definition %></li>
-      <% end %>
-    </ul>
-    <a href="/list"><button type="button" class="btn btn-primary" name="button">Back to word list</button></a>
-    <button type="button" class="btn btn-success reveal" name="button">Add definition</button>
-    <form id="new_def" action="/word/<%= @word.id()%>" method="post">
-      <label for="definition">New Definition</label>
-      <input type="text" name="definition" value="">
-      <button type="submit" class="btn btn-danger" name="button">Submit</button>
-    </form>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h3>Your Definitions:</h3>
+      <ul>
+        <% @word.definitions().each() do |definition| %>
+        <li><%= definition %></li>
+        <% end %>
+      </ul>
+      <a href="/list"><button type="button" class="btn btn-primary" name="button">Back to word list</button></a>
+      <button type="button" class="btn btn-success reveal" name="button">Add definition</button>
+      <form id="new_def" action="/word/<%= @word.id()%>" method="post">
+        <div class="form-group">
+          <label for="definition">New Definition:</label>
+          <input type="text" name="definition" value="">
+        </div>
+        <button type="submit" id="one_line" class="btn btn-danger" name="button">Submit</button>
+      </form>
+    </div>
+    <div class="col-sm-4"></div>
   </div>
-  <div class="col-md-4"></div>
 </div>
