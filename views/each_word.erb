@@ -1,0 +1,6 @@
+<h1><%= @word.headword()%></h1>
+<ul>
+  <% @word.definitions().each() do |definition| %>
+  <li><%= definition %></li>
+  <% end %>
+</ul>

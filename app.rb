@@ -27,3 +27,8 @@ end
 get('/new_entry') do
   erb(:form)
 end
+
+get('/word/:id') do
+  @word = Word.find(params.fetch("id").to_i)
+  erb(:each_word)
+end
